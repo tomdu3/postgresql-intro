@@ -72,7 +72,29 @@ base.metadata.create_all(db)
 #     print(album.AlbumId, album.Title, album.ArtistId, sep=' | ')
 
 # Query 6 - select all tracks where the composer is 'Queen' from the "Track" table
-tracks = session.query(Track).filter_by(Composer='Queen')
+# tracks = session.query(Track).filter_by(Composer='Queen')
+# for track in tracks:
+#     print(
+#         track.TrackId,
+#         track.Name,
+#         track.AlbumId,
+#         track.MediaTypeId,
+#         track.GenreId,
+#         track.Composer,
+#         track.Milliseconds,
+#         track.Bytes,
+#         track.UnitPrice,
+#          sep=' | '
+#     )
+
+# Query 7 - selectr   all records from a different composer
+# artist = session.query(Artist).filter(Artist.Name.like('%Gardiner%')).first()
+# if artist:
+#     for key, val in vars(artist).items():
+#         print(key, val, sep=' | ' )
+
+# Query 8 - select only the 'test' from the "Artist" table
+tracks = session.query(Track).filter_by(Composer='test')
 for track in tracks:
     print(
         track.TrackId,
